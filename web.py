@@ -7,6 +7,8 @@ if not os.path.exists("todos.txt"):
     with open("todos.txt","w") as file:
         pass
 
+# st.set_page_config(layout="wide")
+
 todos = function.file_read()
 def add_todo():
     todo = st.session_state["new_todo"] + "\n"
@@ -23,7 +25,7 @@ def delete_todo():
 
 st.title("My todo App")
 st.subheader("This is my todo app")
-
+# st.write("This app will boost your <b>productivity</b>", unsafe_allow_html=True)
 
 for index,todo in enumerate(todos):
     checkbox = st.checkbox(f"{todo}", key=todo)
